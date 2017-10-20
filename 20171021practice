@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript">
+                function calculate() {
+                    var height = parseInt(document.getElementById('height').value);
+                    var weight = parseInt(document.getElementById('weight').value);
+                    var result = weight/((height/100)*(height/100)) ;
+                    var warning;
+                    if(result<18.5){
+                        warning= "Too thin!";
+                    }else if(result>=18.5 && result<24){
+                        warning = "OK!";
+                    }else if(result>=24 && result<27){
+                        warning = "A little bit overweight!";
+                    }else if(result>=27 && result<30){
+                        warning = "Overweight!";
+                    }else{
+                        warning = "Overweight too much!You really have to go on a diet!";
+                    }
+                    alert('BMI: '+result+'\n'+warning);
+                }
+        </script>
+    </head>
+    <body>
+        <h1>BMI_Calculator</h1>
+        <p>請輸入身高(cm):<input id="height" type="text"></p>
+        <p>請輸入體重(kg):<input id="weight" type="text"></p>
+        <p> <input type="button" value="calculate" onClick="calculate()"></p>
+        
+    </body>
+</html>
